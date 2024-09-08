@@ -28,6 +28,15 @@
   #
   # programs.dconf.enable = true;
 
+  #nixpkgs.config.qt5 = {
+  #enable = true;
+  #platformTheme = "qt5ct"; 
+  #  style = {
+  #    package = pkgs.utterly-nord-plasma;
+  #    name = "Utterly Nord Plasma";
+  #  };
+  #};
+
   # Enable 3D
   # hardware.graphics.enable = true;
   # hardware.graphics.enable32Bit = true;

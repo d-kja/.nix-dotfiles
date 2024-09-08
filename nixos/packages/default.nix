@@ -20,33 +20,57 @@
 
   environment.systemPackages = with pkgs; [
     git
+    vim
     wget
     curl
-    vim
+    unzip
+    zip
+    jq
+
+    alacritty
+    kitty
+    fastfetch
+    starship 
+
+    eww
+    swww
+    waybar # (waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ]; }))
     dunst
+    rofi-wayland
+    networkmanagerapplet
+    wl-clipboard
+    slurp
+    grim
+
+    #dbus
+    #basu
+    meson
     gtk4
     gtk3
     gtk3-x11
-    alacritty
-    kitty
-    libnotify
-    eww
-    swww
+    gdk-pixbuf
     xorg.libxcb
-    rofi-wayland
     egl-wayland
     glfw-wayland
-    waybar # (waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ]; }))
-    fastfetch
-    starship
+    libva
+    xdg-utils
+    libnotify
     freefont_ttf
-    networkmanagerapplet
-    grim
-    slurp
-    wl-clipboard
-    unzip
-    zip
-    discord
+    linuxHeaders
+    qt5.qtwayland 
+    libsForQt5.qt5ct
+    libsForQt5.qtstyleplugin-kvantum
+    libsForQt5.qt5.qtquickcontrols
+    qt6.qtwayland
+    kdePackages.qt6ct
+    kdePackages.kirigami-addons
+    kdePackages.kscreen
+    kdePackages.knewstuff
+    polkit_gnome
+    #gnome.nautilus
+
+    xdg-desktop-portal-hyprland
+    xdg-desktop-portal-gtk
   ];
 
   programs.neovim = {
@@ -60,6 +84,7 @@
   users.users.dkja = {
     packages = with pkgs; [
       kdePackages.kate
+      discord
     ];
   };
 }
